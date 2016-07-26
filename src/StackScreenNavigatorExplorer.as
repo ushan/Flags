@@ -26,8 +26,6 @@ package
 	{
 
 
-		[Inject]
-		public var main	:Main;
 
 		//----------------------------------------------------------------------
 		//
@@ -64,7 +62,7 @@ package
 		//----------------------------------------------------------------------
 		override public function showScreen(screenName:String):void {
 			super.showScreen(screenName);
-			trace(main);
+
 		}
 
 		//----------------------------------------------------------------------
@@ -159,6 +157,7 @@ package
 			starling.supportHighResolutions = true;
 			starling.skipUnchangedFrames = true;
 			starling.start();
+
 /*			if(launchImage)
 			{
 				starling.addEventListener("rootCreated", starling_rootCreatedHandler);
@@ -193,6 +192,7 @@ package
 
 		private function starling_rootCreatedHandler(event:Object):void
 		{
+			_main = event.currentTarget.root as Main;
 			setupPreviewAndOrientation();
 			initContext();
 		}

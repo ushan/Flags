@@ -12,9 +12,15 @@ package feathers.examples.navigator
 	import feathers.themes.MetalWorksMobileTheme;
 import feathers.themes.MinimalMobileTheme;
 
+import model.EScreenName;
+
 import starling.events.Event;
 
-	public class Main extends LayoutGroup
+import view.screens.CountrySelectorScreen;
+
+import view.screens.WelcomeScreen;
+
+public class Main extends LayoutGroup
 	{
 		private static const SCREEN_A	:String = "a";
 		private static const SCREEN_B1	:String = "b1";
@@ -26,8 +32,11 @@ import starling.events.Event;
 		//	read only
 		//
 		//----------------------------------------------------------------------
-		public function get navigator()	:StackScreenNavigator { return _navigator}
-		private var _navigator			:StackScreenNavigator;
+		public function get navigator()		:StackScreenNavigator { return _navigator}
+		private var _navigator				:StackScreenNavigator;
+
+		public function get screens()		:Vector.<StackScreenNavigatorItem> { return _screens}
+		private var _screens				:Vector.<StackScreenNavigatorItem>
 
 		//----------------------------------------------------------------------
 		//
@@ -42,7 +51,8 @@ import starling.events.Event;
 		//----------------------------------------------------------------------
 		public function Main()
 		{
-			new MinimalMobileTheme();
+			//new MinimalMobileTheme();
+			new MetalWorksMobileTheme();
 			super();
 		}
 
@@ -74,10 +84,15 @@ import starling.events.Event;
 			itemB2.addPopEvent(Event.CANCEL);
 			_navigator.addScreen(SCREEN_B2, itemB2);
 
-			var itemC:StackScreenNavigatorItem = new StackScreenNavigatorItem(ScreenC);
+			var itemC:StackScreenNavigatorItem = new StackScreenNavigatorItem(WelcomeScreen);
 			itemC.addPopToRootEvent(Event.CLOSE);
 			itemC.addPopEvent(Event.CANCEL);
-			_navigator.addScreen(SCREEN_C, itemC);
+			_navigator.addScreen(EScreenName.WELCOME_SCREEN, itemC);
+
+			var itemD:StackScreenNavigatorItem = new StackScreenNavigatorItem(CountrySelectorScreen);
+			itemD.addPopToRootEvent(Event.CLOSE);
+			itemD.addPopEvent(Event.CANCEL);
+			_navigator.addScreen(EScreenName.COUNTRY_SELECTOR_SCREEN, itemD);
 
 			_navigator.rootScreenID = SCREEN_A;
 			this.addChild(navigator);

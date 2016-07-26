@@ -31,6 +31,10 @@ import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.api.IInjector;
 
 import view.ApplicationMediator;
+import view.screens.CountrySelectorScreen;
+import view.screens.CountrySelectorScreenMediator;
+import view.screens.WelcomeScreen;
+import view.screens.WelcomeScreenMediator;
 
 
 public class ApConfig implements IConfig {
@@ -103,11 +107,15 @@ public class ApConfig implements IConfig {
 		//---------------
 		// views
 		//---------------
-		//viewProcessorMap.mapMatcher(new TypeMatcher().allOf(Main)).toInjection();
-		viewProcessorMap.map(StackScreenNavigatorExplorer).toInjection();
+		viewProcessorMap.mapMatcher(new TypeMatcher().allOf(Main, WelcomeScreen, CountrySelectorScreen)).toInjection();
+		//viewProcessorMap.map(ApplicationBase).toInjection();
+
+
 		injector.map(Main).asSingleton();
 
 		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
+		mediatorMap.map(WelcomeScreen).toMediator(WelcomeScreenMediator);
+		mediatorMap.map(CountrySelectorScreen).toMediator(CountrySelectorScreenMediator);
 
 
 		//---------------
@@ -117,11 +125,6 @@ public class ApConfig implements IConfig {
 		injector.map(NavigationService).asSingleton();
 		injector.map(FlagsService).asSingleton();
 		injector.map(FlagsModel).asSingleton();
-
-
-
-
-
 
 		//---------------
 		// services

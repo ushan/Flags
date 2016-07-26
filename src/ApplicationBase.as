@@ -4,6 +4,8 @@
 package {
 import feathers.controls.LayoutGroup;
 import ApConfig;
+import feathers.controls.StackScreenNavigator;
+import feathers.examples.navigator.Main;
 
 import flash.display.Sprite;
 
@@ -17,15 +19,25 @@ import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.impl.Context;
 
 public class ApplicationBase extends Sprite {
+
+
+	//----------------------------------------------------------------------
+	//
+	//	read only
+	//
+	//----------------------------------------------------------------------
+	public function get main()	:Main { return _main}
+	protected var _main			:Main;
+
+	public function get navigator()	:StackScreenNavigator { return _main.navigator}
+
 	//----------------------------------------------------------------------
 	//
 	//	private fields
 	//
 	//----------------------------------------------------------------------
 
-	protected var context:IContext;
-
-
+	protected var context			:IContext;
 	private var currentScreenName	:String;
 
 	//----------------------------------------------------------------------
@@ -45,7 +57,13 @@ public class ApplicationBase extends Sprite {
 
 	}
 
-	public function showScreen(screenName:String):void	{	}
+	public function showScreen(screenName:String):void
+	{
+
+		//navigator.getScreen("c");
+		//navigator.pushScreen("c");
+		navigator.pushScreen(screenName, null);
+	}
 
 	//----------------------------------------------------------------------
 	//
