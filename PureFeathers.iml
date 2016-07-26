@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="Flags">
+    <configurations>
+      <configuration name="Flags" target-platform="Mobile" pure-as="true" main-class="StackScreenNavigatorExplorer" output-file="Main.swf" output-folder="$MODULE_DIR$/out/production/PureFeathers">
+        <dependencies target-player="20.0">
+          <entries>
+            <entry library-id="43afc241-f3da-48b2-932f-85933437341a">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="f818c9fb-95b5-4135-a9c8-b589ca163b02">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="8c535bc7-0c0f-4d23-9fd9-6887b510a6bc">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="dd401608-959d-4bb7-ac4f-fcd148c256cb">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="AIRSDK_Compiler_20" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/src/StackScreenNavigatorExplorer-app.xml" package-file-name="Main" />
+        <packaging-ios package-file-name="Main" />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="AIRSDK_Compiler_20" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="43afc241-f3da-48b2-932f-85933437341a" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/feathers.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="f818c9fb-95b5-4135-a9c8-b589ca163b02" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/starling.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="8c535bc7-0c0f-4d23-9fd9-6887b510a6bc" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/MetalWorksMobileTheme.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="dd401608-959d-4bb7-ac4f-fcd148c256cb" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/MinimalMobileTheme.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
