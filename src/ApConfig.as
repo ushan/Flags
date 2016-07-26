@@ -9,12 +9,6 @@ import controller.StartupCommand;
 
 import events.RobotLegsEvent;
 
-import extensions.st.mediators.StarlingContextViewMediator;
-import extensions.st.mediators.StarlingStageMediator;
-import extensions.st.mediators.StarlingSubViewMediator;
-
-import extensions.st.views.StarlingContextView;
-import extensions.st.views.StarlingSubView;
 
 import feathers.examples.navigator.Main;
 import feathers.examples.navigator.MainMediator;
