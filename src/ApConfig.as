@@ -76,6 +76,8 @@ public class ApConfig implements IConfig {
 	{
 //            context.logLevel = LogLevel.FATAL;
 
+		//signalCommandMap.mapSignalClass(showFlagSelected, LoadFlagsDataCommand);
+
 		//---------------
 		// commands
 		//---------------

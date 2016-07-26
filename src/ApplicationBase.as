@@ -27,6 +27,7 @@ public class ApplicationBase extends Sprite {
 
 
 	private var currentScreenName	:String;
+
 	//----------------------------------------------------------------------
 	//
 	//	constructor
@@ -46,10 +47,7 @@ public class ApplicationBase extends Sprite {
 		context.configure(ApConfig, new ContextView(this));
 	}
 
-	public function showScreen(screenName:String):void
-	{
-
-	}
+	public function showScreen(screenName:String):void	{	}
 
 	//----------------------------------------------------------------------
 	//

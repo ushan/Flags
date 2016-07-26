@@ -12,7 +12,7 @@ public class FlagsService extends Actor {
 	//----------------------------------------------------------------------
 
 	public function get flags()	:Vector.<FlagVO>    { return _flags; }
-	private var _flags	:Vector.<FlagVO> ;
+	private var _flags			:Vector.<FlagVO> ;
 
 	//----------------------------------------------------------------------
 	//
