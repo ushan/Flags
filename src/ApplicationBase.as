@@ -11,6 +11,8 @@ import flash.display.Sprite;
 
 import flash.events.Event;
 
+import org.osflash.signals.Signal;
+
 import robotlegs.bender.bundles.mvcs.MVCSBundle;
 
 import robotlegs.bender.extensions.contextView.ContextView;
@@ -22,7 +24,13 @@ import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
 import starling.core.Starling;
 
 public class ApplicationBase extends Sprite {
+	//----------------------------------------------------------------------
+	//
+	//	signals
+	//
+	//----------------------------------------------------------------------
 
+	public const uiCreated:Signal = new Signal();
 
 	//----------------------------------------------------------------------
 	//
@@ -66,7 +74,7 @@ public class ApplicationBase extends Sprite {
 
 		//navigator.getScreen("c");
 		//navigator.pushScreen("c");
-		navigator.pushScreen(screenName, null);
+		_main.navigator.pushScreen(screenName, null);
 	}
 
 	//----------------------------------------------------------------------
@@ -75,20 +83,19 @@ public class ApplicationBase extends Sprite {
 	//
 	//----------------------------------------------------------------------
 	protected function initContext():void {
+/*		context = new Context();
+		context.install(MVCSBundle);
+		context.configure(ApConfig, new ContextView(this));*/
 		context = new Context();
 		context.install(MVCSBundle, StarlingViewMapExtension);
-		context.configure(StarlingConfig, new ContextView(this), starling);
+		context.configure(ApConfig, new ContextView(this), starling);
 	}
 
-/*	private function init():void
+	protected function reportUICreated():void
 	{
-		const starling:Starling = new Starling(StarlingContextView, stage);
+		uiCreated.dispatch();
+	}
 
-		_context = new Context()
-				.install( MVCSBundle, StarlingViewMapExtension )
-				.configure(StarlingConfig, new ContextView( this ), starling);
-
-	}*/
 
 	//----------------------------------------------------------------------
 	//

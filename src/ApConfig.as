@@ -17,6 +17,7 @@ import extensions.st.views.StarlingContextView;
 import extensions.st.views.StarlingSubView;
 
 import feathers.examples.navigator.Main;
+import feathers.examples.navigator.MainMediator;
 
 import flash.events.IEventDispatcher;
 
@@ -116,19 +117,27 @@ public class ApConfig implements IConfig {
 		//---------------
 		// views
 		//---------------
-		viewProcessorMap.mapMatcher(new TypeMatcher().allOf(Main, WelcomeScreen, CountrySelectorScreen)).toInjection();
-		//viewProcessorMap.map(ApplicationBase).toInjection();
+		//viewProcessorMap.mapMatcher(new TypeMatcher().allOf(ApplicationBase, Main, WelcomeScreen, CountrySelectorScreen)).toInjection();
+		viewProcessorMap.map(ApplicationBase).toInjection();
 
 
-		injector.map(Main).asSingleton();
 
-		mediatorMap.map(StarlingContextView).toMediator(StarlingContextViewMediator);
+/*		mediatorMap.map(StarlingContextView).toMediator(StarlingContextViewMediator);
 		mediatorMap.map(Stage).toMediator(StarlingStageMediator);
-		mediatorMap.map(StarlingSubView).toMediator(StarlingSubViewMediator);
+		mediatorMap.map(StarlingSubView).toMediator(StarlingSubViewMediator);*/
+
+		//injector.map(Main).asSingleton();
 
 /*		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
 		mediatorMap.map(WelcomeScreen).toMediator(WelcomeScreenMediator);
 		mediatorMap.map(CountrySelectorScreen).toMediator(CountrySelectorScreenMediator);*/
+
+
+
+		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
+		mediatorMap.map(Main).toMediator(MainMediator);
+		mediatorMap.map(WelcomeScreen).toMediator(WelcomeScreenMediator);
+		mediatorMap.map(CountrySelectorScreen).toMediator(CountrySelectorScreenMediator);
 
 
 		//---------------
@@ -149,7 +158,7 @@ public class ApConfig implements IConfig {
 
 	private function init():void
 	{
-		eventDispatcher.dispatchEvent(RobotLegsEvent.startupComplete());
+		//eventDispatcher.dispatchEvent(RobotLegsEvent.startupComplete());
 	}
 }
 }

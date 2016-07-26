@@ -1,6 +1,10 @@
 package view
 {
 
+import events.RobotLegsEvent;
+
+import flash.events.IEventDispatcher;
+
 import model.navigation.NavigationEvent;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
@@ -9,7 +13,11 @@ import robotlegs.bender.bundles.mvcs.Mediator;
     {
 
         [Inject]
-        public var mainView:ApplicationBase;
+        public var applicationBase:ApplicationBase;
+/*
+
+        [Inject]
+        public var dispatcher	:IEventDispatcher;*/
 
         public function ApplicationMediator()
         {
@@ -20,6 +28,8 @@ import robotlegs.bender.bundles.mvcs.Mediator;
         {
             super.initialize();
             addContextListener(NavigationEvent.NAVIGATE_TO, context_navigateToHandler, NavigationEvent);
+
+            applicationBase.uiCreated.add(startGameSignalHandler);
         }
 
         //----------------------------------------------------------------------
@@ -30,7 +40,12 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
         private function context_navigateToHandler(event:NavigationEvent):void
         {
-            mainView.showScreen(event.screenName);
+            applicationBase.showScreen(event.screenName);
+        }
+
+        private function startGameSignalHandler():void
+        {
+            eventDispatcher.dispatchEvent(RobotLegsEvent.startupComplete());
         }
 
 

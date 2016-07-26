@@ -153,7 +153,7 @@ package
 		{
 			Starling.multitouchEnabled = true;
 			//starling = new Starling(Main, stage, null, null, Context3DRenderMode.AUTO, Context3DProfile.BASELINE);
-			const starling:Starling = new Starling(Main, stage);
+			starling = new Starling(Main, stage);
 			starling.supportHighResolutions = true;
 			starling.skipUnchangedFrames = true;
 			starling.start();
@@ -167,7 +167,7 @@ package
 			scaler = new ScreenDensityScaleFactorManager(starling);
 			stage.addEventListener(Event.DEACTIVATE, stage_deactivateHandler, false, 0, true);
 
-
+			initContext();
 		}
 
 		private function setupPreviewAndOrientation():void
@@ -195,7 +195,8 @@ package
 		{
 			_main = event.currentTarget.root as Main;
 			setupPreviewAndOrientation();
-			initContext();
+			reportUICreated();
+
 		}
 
 		private function stage_deactivateHandler(event:Event):void
