@@ -4,13 +4,17 @@
 package {
 
 
+import controller.NavigationCommand;
 import controller.StartupCommand;
 
 import events.RobotLegsEvent;
 
 import flash.events.IEventDispatcher;
 
+import model.flags.FlagsModel;
+
 import model.flags.FlagsService;
+import model.navigation.NavigationEvent;
 
 import model.navigation.NavigationService;
 
@@ -78,8 +82,8 @@ public class ApConfig implements IConfig {
 
 		commandMap.map(RobotLegsEvent.STARTUP_COMPLETE, RobotLegsEvent).toCommand(StartupCommand);
 
-		/*		commandMap.map(NavigationEvent.NAVIGATE_TO, NavigationEvent).toCommand(NavigationCommand);
-		commandMap.map(NavigationEvent.NAVIGATE_BACK, NavigationEvent).toCommand(NavigationCommand);
+		commandMap.map(NavigationEvent.NAVIGATE_TO, NavigationEvent).toCommand(NavigationCommand);
+		/*commandMap.map(NavigationEvent.NAVIGATE_BACK, NavigationEvent).toCommand(NavigationCommand);
 		commandMap.map(NavigationEvent.SET_SCREEN, NavigationEvent).toCommand(NavigationCommand);*/
 
 
@@ -106,6 +110,7 @@ public class ApConfig implements IConfig {
 
 		injector.map(NavigationService).asSingleton();
 		injector.map(FlagsService).asSingleton();
+		injector.map(FlagsModel).asSingleton();
 
 
 		//---------------

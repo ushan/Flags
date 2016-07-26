@@ -7,8 +7,6 @@ import rl.Actor;
     public final class NavigationService extends Actor
     {
 
-
-
         //----------------------------------------------------------------------
         //
         //	public methods
