@@ -19,6 +19,8 @@ import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.impl.Context;
 import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
 
+import starling.core.Starling;
+
 public class ApplicationBase extends Sprite {
 
 
@@ -34,11 +36,12 @@ public class ApplicationBase extends Sprite {
 
 	//----------------------------------------------------------------------
 	//
-	//	private fields
+	//	protected fields
 	//
 	//----------------------------------------------------------------------
 
 	protected var context			:IContext;
+	protected var starling			:Starling;
 	private var currentScreenName	:String;
 
 	//----------------------------------------------------------------------
@@ -74,7 +77,7 @@ public class ApplicationBase extends Sprite {
 	protected function initContext():void {
 		context = new Context();
 		context.install(MVCSBundle, StarlingViewMapExtension);
-		context.configure(ApConfig, new ContextView(this));
+		context.configure(ApConfig, new ContextView(this), starling);
 	}
 
 	//----------------------------------------------------------------------

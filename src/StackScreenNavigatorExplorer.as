@@ -32,7 +32,6 @@ package
 		//	private vars
 		//
 		//----------------------------------------------------------------------
-		private var starling			:Starling;
 		private var scaler				:ScreenDensityScaleFactorManager;
 		private var launchImage			:Loader;
 		private var savedAutoOrients	:Boolean;
@@ -166,6 +165,7 @@ package
 
 			scaler = new ScreenDensityScaleFactorManager(starling);
 			stage.addEventListener(Event.DEACTIVATE, stage_deactivateHandler, false, 0, true);
+
 
 		}
 

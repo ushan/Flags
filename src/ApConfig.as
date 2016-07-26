@@ -9,6 +9,13 @@ import controller.StartupCommand;
 
 import events.RobotLegsEvent;
 
+import extentions.st.mediators.StarlingContextViewMediator;
+import extentions.st.mediators.StarlingStageMediator;
+import extentions.st.mediators.StarlingSubViewMediator;
+
+import extentions.st.views.StarlingContextView;
+import extentions.st.views.StarlingSubView;
+
 import feathers.examples.navigator.Main;
 
 import flash.events.IEventDispatcher;
@@ -29,6 +36,8 @@ import robotlegs.bender.extensions.viewProcessorMap.api.IViewProcessorMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.api.IInjector;
+
+import starling.display.Stage;
 
 import view.ApplicationMediator;
 import view.screens.CountrySelectorScreen;
@@ -112,6 +121,10 @@ public class ApConfig implements IConfig {
 
 
 		injector.map(Main).asSingleton();
+
+		mediatorMap.map(StarlingContextView).toMediator(StarlingContextViewMediator);
+		mediatorMap.map(Stage).toMediator(StarlingStageMediator);
+		mediatorMap.map(StarlingSubView).toMediator(StarlingSubViewMediator);
 
 		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
 		mediatorMap.map(WelcomeScreen).toMediator(WelcomeScreenMediator);
