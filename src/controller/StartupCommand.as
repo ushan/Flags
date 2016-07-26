@@ -20,7 +20,7 @@ package controller
 import model.EScreenName;
 
 import model.flags.FlagsModel;
-import model.UserVO;
+import model.flags.FlagsService;
 import model.navigation.NavigationEvent;
 
 import rl.Command;
@@ -31,7 +31,10 @@ class StartAppCommand extends Command
 {
 
     [Inject]
-    public var userModel:FlagsModel;
+    public var flagsModel:FlagsModel;
+
+    [Inject]
+    public var flagsService:FlagsService;
 
     override public function execute():void
     {

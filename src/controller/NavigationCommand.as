@@ -24,19 +24,15 @@ public final class NavigationCommand extends Command
             switch(event.type)
             {
                 case NavigationEvent.NAVIGATE_TO:
-                    service.setCurrentScreen(event.screenName, event.allowGoBack);
+                    //service.setCurrentScreen(event.screenName, event.allowGoBack);
                     break;
 
                 case NavigationEvent.NAVIGATE_BACK:
-                    service.back();
-                    break;
-
-                case NavigationEvent.CLEAR:
-                    service.clear();
+                    //service.back();
                     break;
 
                 case NavigationEvent.SET_SCREEN:
-                    service.setCurrentScreen(event.screenName, event.allowGoBack);
+                    service.setCurrentScreen(event.screenName);
                     break;
             }
         }
