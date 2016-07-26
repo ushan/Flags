@@ -152,7 +152,8 @@ package
 		private function activateStarling():void
 		{
 			Starling.multitouchEnabled = true;
-			starling = new Starling(Main, stage, null, null, Context3DRenderMode.AUTO, Context3DProfile.BASELINE);
+			//starling = new Starling(Main, stage, null, null, Context3DRenderMode.AUTO, Context3DProfile.BASELINE);
+			const starling:Starling = new Starling(Main, stage);
 			starling.supportHighResolutions = true;
 			starling.skipUnchangedFrames = true;
 			starling.start();

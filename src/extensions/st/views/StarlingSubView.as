@@ -1,4 +1,4 @@
-package extentions.st.views {
+package extensions.st.views {
 	import starling.display.Sprite;
 
 	/**

@@ -1,4 +1,4 @@
-package extentions.st.mediators {
+package extensions.st.mediators {
 	import robotlegs.extensions.starlingViewMap.impl.StarlingMediator;
 
 	/**

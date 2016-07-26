@@ -77,8 +77,18 @@ public class ApplicationBase extends Sprite {
 	protected function initContext():void {
 		context = new Context();
 		context.install(MVCSBundle, StarlingViewMapExtension);
-		context.configure(ApConfig, new ContextView(this), starling);
+		context.configure(StarlingConfig, new ContextView(this), starling);
 	}
+
+/*	private function init():void
+	{
+		const starling:Starling = new Starling(StarlingContextView, stage);
+
+		_context = new Context()
+				.install( MVCSBundle, StarlingViewMapExtension )
+				.configure(StarlingConfig, new ContextView( this ), starling);
+
+	}*/
 
 	//----------------------------------------------------------------------
 	//

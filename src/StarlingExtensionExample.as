@@ -9,7 +9,7 @@ package
 	import robotlegs.bender.framework.impl.Context;
 	import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
 	import starling.core.Starling;
-	import extentions.st.views.StarlingContextView;
+	import extensions.st.views.StarlingContextView;
 
 	/**
 	 * An example to demo the RL2 Starling extension.
@@ -34,8 +34,9 @@ package
 			
 			_context = new Context()
 				.install( MVCSBundle, StarlingViewMapExtension )
-				.configure(StarlingConfig, new ContextView( this ), starling);
-				
+				//.configure(StarlingConfig, new ContextView( this ), starling);
+				.configure(ApConfig, new ContextView( this ), starling);
+
 		}
 	}
 }

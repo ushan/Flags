@@ -9,12 +9,12 @@ import controller.StartupCommand;
 
 import events.RobotLegsEvent;
 
-import extentions.st.mediators.StarlingContextViewMediator;
-import extentions.st.mediators.StarlingStageMediator;
-import extentions.st.mediators.StarlingSubViewMediator;
+import extensions.st.mediators.StarlingContextViewMediator;
+import extensions.st.mediators.StarlingStageMediator;
+import extensions.st.mediators.StarlingSubViewMediator;
 
-import extentions.st.views.StarlingContextView;
-import extentions.st.views.StarlingSubView;
+import extensions.st.views.StarlingContextView;
+import extensions.st.views.StarlingSubView;
 
 import feathers.examples.navigator.Main;
 
@@ -126,9 +126,9 @@ public class ApConfig implements IConfig {
 		mediatorMap.map(Stage).toMediator(StarlingStageMediator);
 		mediatorMap.map(StarlingSubView).toMediator(StarlingSubViewMediator);
 
-		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
+/*		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
 		mediatorMap.map(WelcomeScreen).toMediator(WelcomeScreenMediator);
-		mediatorMap.map(CountrySelectorScreen).toMediator(CountrySelectorScreenMediator);
+		mediatorMap.map(CountrySelectorScreen).toMediator(CountrySelectorScreenMediator);*/
 
 
 		//---------------
