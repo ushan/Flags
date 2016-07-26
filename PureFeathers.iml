@@ -17,6 +17,18 @@
             <entry library-id="dd401608-959d-4bb7-ac4f-fcd148c256cb">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="f381bc62-55b9-47c5-8dfe-83e284b22fde">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="b0f42e12-d360-4f6b-b0df-23de3f42dcf0">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="95aa1a12-90ce-4e09-a082-fa4beda39939">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="a03331f7-d74d-45e3-8b54-20cb01b5d7fc">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="AIRSDK_Compiler_20" />
         </dependencies>
@@ -70,6 +82,46 @@
         <properties id="dd401608-959d-4bb7-ac4f-fcd148c256cb" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/MinimalMobileTheme.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="f381bc62-55b9-47c5-8dfe-83e284b22fde" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/robotlegs-framework-v2.2.1.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="b0f42e12-d360-4f6b-b0df-23de3f42dcf0" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/robotlegs-utilities-macrobot-v0.9.6.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="95aa1a12-90ce-4e09-a082-fa4beda39939" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/Greensock.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="a03331f7-d74d-45e3-8b54-20cb01b5d7fc" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/as3-signals-v0.9-BETA.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

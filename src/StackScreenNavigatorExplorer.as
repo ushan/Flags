@@ -22,7 +22,7 @@ package
 	import starling.core.Starling;
 
 	[SWF(width="960",height="640",frameRate="60",backgroundColor="#4a4137")]
-	public class StackScreenNavigatorExplorer extends Sprite
+	public class StackScreenNavigatorExplorer extends ApplicationBase
 	{
 		public function StackScreenNavigatorExplorer()
 		{
@@ -36,8 +36,8 @@ package
 			this.loaderInfo.addEventListener(Event.COMPLETE, loaderInfo_completeHandler);
 		}
 
-		private var _starling:Starling;
-		private var _scaler:ScreenDensityScaleFactorManager;
+		private var _starling		:Starling;
+		private var _scaler			:ScreenDensityScaleFactorManager;
 		private var _launchImage:Loader;
 		private var _savedAutoOrients:Boolean;
 
