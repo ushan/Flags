@@ -1,4 +1,5 @@
-package rl
+
+package org.robotlegs.mvcs
 {
 import flash.events.Event;
 import flash.events.IEventDispatcher;
@@ -42,7 +43,6 @@ public class StarlingMediator implements IMediator
 	 */
 	public function initialize():void
 	{
-		trace(this);
 	}
 
 	/**
@@ -90,5 +90,7 @@ public class StarlingMediator implements IMediator
 		if (eventDispatcher.hasEventListener(event.type))
 			eventDispatcher.dispatchEvent(event);
 	}
+
+
 }
 }
