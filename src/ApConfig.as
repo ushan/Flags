@@ -25,6 +25,7 @@ import robotlegs.bender.extensions.contextView.ContextView;
 import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 import robotlegs.bender.extensions.matching.TypeMatcher;
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.sarsContextView.api.ISARSContextView;
 import robotlegs.bender.extensions.viewProcessorMap.api.IViewProcessorMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
@@ -67,6 +68,9 @@ public class ApConfig implements IConfig {
 
 	[Inject]
 	public var contextView		:ContextView;
+
+	[Inject]
+	public var sarsContextView	:ISARSContextView;
 
 	[Inject]
 	public var commandMap		:IEventCommandMap;

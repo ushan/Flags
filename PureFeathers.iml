@@ -29,6 +29,12 @@
             <entry library-id="a03331f7-d74d-45e3-8b54-20cb01b5d7fc">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="9764efaa-144b-43f6-a379-01ed152351d1">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="da8522d5-08fd-4c8a-aa1a-6a8da7f886d4">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="AIRSDK_Compiler_20" />
         </dependencies>
@@ -92,6 +98,7 @@
         <properties id="f381bc62-55b9-47c5-8dfe-83e284b22fde" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/robotlegs-framework-v2.2.1.swc!/" />
+          <root url="file://D:/SVNOpenSource/mvc/robotlegs/robotlegs-framework-v2.2.1/src" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -122,6 +129,26 @@
         <properties id="a03331f7-d74d-45e3-8b54-20cb01b5d7fc" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/as3-signals-v0.9-BETA.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="9764efaa-144b-43f6-a379-01ed152351d1" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/robotlegs-extensions-SignalCommandMap-v1.0.0b1.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="da8522d5-08fd-4c8a-aa1a-6a8da7f886d4" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/away3d-core-fp11_4_0_9_gold.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

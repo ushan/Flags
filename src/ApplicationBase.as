@@ -11,6 +11,8 @@ import flash.display.Sprite;
 
 import flash.events.Event;
 
+import robotlegs.bender.bundles.SARSBundle;
+
 import robotlegs.bender.bundles.mvcs.MVCSBundle;
 
 import robotlegs.bender.extensions.contextView.ContextView;
@@ -72,7 +74,8 @@ public class ApplicationBase extends Sprite {
 	//----------------------------------------------------------------------
 	protected function initContext():void {
 		context = new Context();
-		context.install(MVCSBundle);
+		//context.install(MVCSBundle);
+		context.install(SARSBundle);
 		context.configure(ApConfig, new ContextView(this));
 	}
 
