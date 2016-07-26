@@ -13,10 +13,10 @@ import robotlegs.bender.bundles.mvcs.Command;
 public final class NavigationCommand extends Command
     {
         [Inject]
-        public var event:NavigationEvent;
+        public var event    :NavigationEvent;
 
         [Inject]
-        public var service:NavigationService;
+        public var service  :NavigationService;
 
         override public function execute():void
         {

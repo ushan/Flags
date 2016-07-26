@@ -9,6 +9,8 @@ import controller.StartupCommand;
 
 import events.RobotLegsEvent;
 
+import feathers.examples.navigator.Main;
+
 import flash.events.IEventDispatcher;
 
 import model.flags.FlagsModel;
@@ -101,7 +103,9 @@ public class ApConfig implements IConfig {
 		//---------------
 		// views
 		//---------------
-
+		//viewProcessorMap.mapMatcher(new TypeMatcher().allOf(Main)).toInjection();
+		viewProcessorMap.map(StackScreenNavigatorExplorer).toInjection();
+		injector.map(Main).asSingleton();
 
 		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
 
@@ -113,6 +117,10 @@ public class ApConfig implements IConfig {
 		injector.map(NavigationService).asSingleton();
 		injector.map(FlagsService).asSingleton();
 		injector.map(FlagsModel).asSingleton();
+
+
+
+
 
 
 		//---------------

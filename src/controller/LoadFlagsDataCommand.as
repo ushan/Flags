@@ -15,10 +15,10 @@ public class LoadFlagsDataCommand extends Command {
 	public var event:LoadDataEvent;*/
 
 	[Inject]
-	public var flagsService:FlagsService;
+	public var flagsService			:FlagsService;
 
 	[Inject]
-	public var navigationService:NavigationService;
+	public var navigationService	:NavigationService;
 
 	override public function execute():void
 	{

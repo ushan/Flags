@@ -42,12 +42,21 @@ public class ApplicationBase extends Sprite {
 	private function init():void {
 		updateSize();
 
+
+	}
+
+	public function showScreen(screenName:String):void	{	}
+
+	//----------------------------------------------------------------------
+	//
+	//	protected methods
+	//
+	//----------------------------------------------------------------------
+	protected function initContext():void {
 		context = new Context();
 		context.install(MVCSBundle);
 		context.configure(ApConfig, new ContextView(this));
 	}
-
-	public function showScreen(screenName:String):void	{	}
 
 	//----------------------------------------------------------------------
 	//

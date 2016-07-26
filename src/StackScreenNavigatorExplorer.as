@@ -25,6 +25,10 @@ package
 	public class StackScreenNavigatorExplorer extends ApplicationBase
 	{
 
+
+		[Inject]
+		public var main	:Main;
+
 		//----------------------------------------------------------------------
 		//
 		//	private vars
@@ -60,8 +64,15 @@ package
 		//----------------------------------------------------------------------
 		override public function showScreen(screenName:String):void {
 			super.showScreen(screenName);
-
+			trace(main);
 		}
+
+		//----------------------------------------------------------------------
+		//
+		//	protected methods
+		//
+		//----------------------------------------------------------------------
+
 
 		//----------------------------------------------------------------------
 		//
@@ -141,22 +152,25 @@ package
 			}
 		}
 
-		private function loaderInfo_completeHandler(event:Event):void
+		private function activateStarling():void
 		{
 			Starling.multitouchEnabled = true;
 			starling = new Starling(Main, stage, null, null, Context3DRenderMode.AUTO, Context3DProfile.BASELINE);
 			starling.supportHighResolutions = true;
 			starling.skipUnchangedFrames = true;
 			starling.start();
-			if(launchImage)
+/*			if(launchImage)
 			{
 				starling.addEventListener("rootCreated", starling_rootCreatedHandler);
-			}
+			}*/
+			starling.addEventListener("rootCreated", starling_rootCreatedHandler);
+
 			scaler = new ScreenDensityScaleFactorManager(starling);
 			stage.addEventListener(Event.DEACTIVATE, stage_deactivateHandler, false, 0, true);
+
 		}
 
-		private function starling_rootCreatedHandler(event:Object):void
+		private function setupPreviewAndOrientation():void
 		{
 			if(launchImage)
 			{
@@ -165,6 +179,22 @@ package
 				launchImage = null;
 				stage.autoOrients = savedAutoOrients;
 			}
+		}
+		//----------------------------------------------------------------------
+		//
+		//	eventHandlers
+		//
+		//----------------------------------------------------------------------
+
+		private function loaderInfo_completeHandler(event:Event):void
+		{
+			activateStarling();
+		}
+
+		private function starling_rootCreatedHandler(event:Object):void
+		{
+			setupPreviewAndOrientation();
+			initContext();
 		}
 
 		private function stage_deactivateHandler(event:Event):void
