@@ -1,17 +1,16 @@
-package mediators {
+package extentions.st.mediators {
 	import robotlegs.extensions.starlingViewMap.impl.StarlingMediator;
 
 	/**
 	 * @author jamieowen
 	 */
-	public class StarlingContextViewMediator extends StarlingMediator
+	public class StarlingSubViewMediator extends StarlingMediator
 	{
-		
-		public function StarlingContextViewMediator()
+		public function StarlingSubViewMediator()
 		{
 			
 		}
-		
+
 		override public function initialize():void
 		{
 			super.initialize();

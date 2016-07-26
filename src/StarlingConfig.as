@@ -1,15 +1,15 @@
 package {
-	import mediators.StarlingContextViewMediator;
-	import mediators.StarlingStageMediator;
-	import mediators.StarlingSubViewMediator;
+	import extentions.st.mediators.StarlingContextViewMediator;
+	import extentions.st.mediators.StarlingStageMediator;
+	import extentions.st.mediators.StarlingSubViewMediator;
 
 	import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 	import robotlegs.bender.framework.api.IConfig;
 
 	import starling.display.Stage;
 
-	import views.StarlingContextView;
-	import views.StarlingSubView;
+	import extentions.st.views.StarlingContextView;
+	import extentions.st.views.StarlingSubView;
 
 	/**
 	 * @author jamieowen

@@ -9,7 +9,7 @@ package
 	import robotlegs.bender.framework.impl.Context;
 	import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
 	import starling.core.Starling;
-	import views.StarlingContextView;
+	import extentions.st.views.StarlingContextView;
 
 	/**
 	 * An example to demo the RL2 Starling extension.

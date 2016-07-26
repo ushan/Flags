@@ -1,4 +1,4 @@
-package views {
+package extentions.st.views {
 	import starling.display.Sprite;
 	import starling.events.Event;
 
@@ -24,7 +24,7 @@ package views {
 			var sprite:Sprite = new Sprite();
 			addChild( sprite );
 			
-			// add the sub view..  ( should get two mediators - StarlingSpriteMediator and StarlingSubViewMediator )
+			// add the sub view..  ( should get two extentions.mediators - StarlingSpriteMediator and StarlingSubViewMediator )
 			var subView:StarlingSubView = new StarlingSubView();
 			addChild( subView );
 			
