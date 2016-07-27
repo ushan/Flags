@@ -8,7 +8,7 @@ public class NavigateSignal extends Signal {
 
 
 
-
+	public var screenName:String;
 	//----------------------------------------------------------------------
 	//
 	//	constructor
@@ -20,6 +20,7 @@ public class NavigateSignal extends Signal {
 	 */
 	public function NavigateSignal() {
 		super(String);
+		//this.screenName = screenName;
 	}
 }
 }
