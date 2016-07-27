@@ -46,19 +46,6 @@ import view.screens.WelcomeScreenMediator;
 
 public class ApConfig implements IConfig {
 
-/*	[Inject]
-	public var injector:IInjector;
-
-	[Inject]
-	public var mediatorMap:IMediatorMap;
-
-	[Inject]
-	public var commandMap:IEventCommandMap;
-
-	[Inject]
-	public var contextView:ContextView;*/
-
-
 
 	[Inject]
 	public var context			:IContext;
@@ -76,7 +63,7 @@ public class ApConfig implements IConfig {
 	public var contextView		:ContextView;
 
 	[Inject]
-	public var evtCommandMap		:IEventCommandMap;
+	public var evtCommandMap	:IEventCommandMap;
 
 	[Inject]
 	public var commandMap		:ISignalCommandMap;

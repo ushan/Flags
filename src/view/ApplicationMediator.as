@@ -37,7 +37,6 @@ public final class ApplicationMediator extends Mediator {
 	override public function initialize():void
 	{
 		super.initialize();
-		addContextListener(NavigationEvent.NAVIGATE_TO, context_navigateToHandler, NavigationEvent);
 
 
 		applicationBase.uiCreated.add(startGameSignalHandler);
@@ -50,10 +49,6 @@ public final class ApplicationMediator extends Mediator {
 	//
 	//----------------------------------------------------------------------
 
-	private function context_navigateToHandler(event:NavigationEvent):void
-	{
-		applicationBase.showScreen(event.screenName);
-	}
 
 	private function startGameSignalHandler():void
 	{
