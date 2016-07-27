@@ -1,7 +1,7 @@
 /**
  * Created by Ushan on 26.07.2016.
  */
-package {
+package view {
 import feathers.controls.LayoutGroup;
 import ApConfig;
 import feathers.controls.StackScreenNavigator;
@@ -73,8 +73,6 @@ public class ApplicationBase extends Sprite {
 	public function showScreen(screenName:String):void
 	{
 
-		//navigator.getScreen("c");
-		//navigator.pushScreen("c");
 		_main.navigator.pushScreen(screenName, null);
 	}
 
@@ -84,9 +82,6 @@ public class ApplicationBase extends Sprite {
 	//
 	//----------------------------------------------------------------------
 	protected function initContext():void {
-/*		context = new Context();
-		context.install(MVCSBundle);
-		context.configure(ApConfig, new ContextView(this));*/
 		context = new Context();
 		context.install(MVCSBundle, StarlingViewMapExtension, SignalCommandMapExtension);
 		context.configure(ApConfig, new ContextView(this), starling);

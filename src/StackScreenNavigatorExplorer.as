@@ -21,7 +21,9 @@ package
 
 	import starling.core.Starling;
 
-	[SWF(width="960",height="640",frameRate="60",backgroundColor="#4a4137")]
+import view.ApplicationBase;
+
+[SWF(width="960",height="640",frameRate="60",backgroundColor="#4a4137")]
 	public class StackScreenNavigatorExplorer extends ApplicationBase
 	{
 

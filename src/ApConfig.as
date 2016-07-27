@@ -37,6 +37,8 @@ import robotlegs.bender.framework.api.IInjector;
 
 import starling.display.Stage;
 
+import view.ApplicationBase;
+
 import view.ApplicationMediator;
 import view.screens.CountrySelectorScreen;
 import view.screens.CountrySelectorScreenMediator;
@@ -61,9 +63,9 @@ public class ApConfig implements IConfig {
 
 	[Inject]
 	public var contextView		:ContextView;
-
+/*
 	[Inject]
-	public var evtCommandMap	:IEventCommandMap;
+	public var evtCommandMap	:IEventCommandMap;*/
 
 	[Inject]
 	public var commandMap		:ISignalCommandMap;
@@ -84,15 +86,9 @@ public class ApConfig implements IConfig {
 		//---------------
 		// commands
 		//---------------
-
-		//commandMap.map(RobotLegsEvent.STARTUP_COMPLETE, RobotLegsEvent).toCommand(StartupCommand);
-		//evtCommandMap.map(RobotLegsEvent.STARTUP_COMPLETE, RobotLegsEvent).toCommand(StartupCommand);
 		commandMap.map(StartupSignal).toCommand(StartupCommand);
 		commandMap.map(NavigateSignal).toCommand(NavigationCommand);
 
-		//evtCommandMap.map(NavigationEvent.NAVIGATE_TO, NavigationEvent).toCommand(NavigationCommand);
-		/*commandMap.map(NavigationEvent.NAVIGATE_BACK, NavigationEvent).toCommand(NavigationCommand);
-		commandMap.map(NavigationEvent.SET_SCREEN, NavigationEvent).toCommand(NavigationCommand);*/
 
 
 		//---------------
@@ -111,16 +107,6 @@ public class ApConfig implements IConfig {
 		viewProcessorMap.map(ApplicationBase).toInjection();
 
 
-
-/*		mediatorMap.map(StarlingContextView).toMediator(StarlingContextViewMediator);
-		mediatorMap.map(Stage).toMediator(StarlingStageMediator);
-		mediatorMap.map(StarlingSubView).toMediator(StarlingSubViewMediator);*/
-
-		//injector.map(Main).asSingleton();
-
-/*		mediatorMap.map(ApplicationBase).toMediator(ApplicationMediator);
-		mediatorMap.map(WelcomeScreen).toMediator(WelcomeScreenMediator);
-		mediatorMap.map(CountrySelectorScreen).toMediator(CountrySelectorScreenMediator);*/
 
 
 
