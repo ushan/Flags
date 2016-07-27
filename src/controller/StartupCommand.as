@@ -17,6 +17,8 @@ package controller
 }
 
 
+import controller.NavigateSignal;
+
 import model.EScreenName;
 
 import model.flags.FlagsModel;
@@ -31,15 +33,19 @@ class StartAppCommand extends Command
 {
 
     [Inject]
-    public var flagsModel:FlagsModel;
+    public var flagsModel   :FlagsModel;
 
     [Inject]
-    public var flagsService:FlagsService;
+    public var flagsService :FlagsService;
+
+    [Inject]
+    public var signal       :NavigateSignal;
 
     override public function execute():void
     {
 
-        dispatch(NavigationEvent.navigateTo(EScreenName.WELCOME_SCREEN));
+        //dispatch(NavigationEvent.navigateTo(EScreenName.WELCOME_SCREEN));
+        signal.dispatch(EScreenName.WELCOME_SCREEN);
 
     }
 }

@@ -1,6 +1,8 @@
 package view
 {
 
+import controller.StartupSignal;
+
 import events.RobotLegsEvent;
 
 import flash.events.IEventDispatcher;
@@ -13,7 +15,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
     {
 
         [Inject]
-        public var applicationBase:ApplicationBase;
+        public var applicationBase  :ApplicationBase;
+
+        [Inject]
+        public var signal           :StartupSignal;
 /*
 
         [Inject]
@@ -45,7 +50,8 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
         private function startGameSignalHandler():void
         {
-            eventDispatcher.dispatchEvent(RobotLegsEvent.startupComplete());
+            //eventDispatcher.dispatchEvent(RobotLegsEvent.startupComplete());
+            signal.dispatch();
         }
 
 

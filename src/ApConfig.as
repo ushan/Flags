@@ -4,8 +4,10 @@
 package {
 
 
+import controller.NavigateSignal;
 import controller.NavigationCommand;
 import controller.StartupCommand;
+import controller.StartupSignal;
 
 import events.RobotLegsEvent;
 
@@ -27,6 +29,7 @@ import robotlegs.bender.extensions.contextView.ContextView;
 import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 import robotlegs.bender.extensions.matching.TypeMatcher;
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.extensions.viewProcessorMap.api.IViewProcessorMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
@@ -73,7 +76,10 @@ public class ApConfig implements IConfig {
 	public var contextView		:ContextView;
 
 	[Inject]
-	public var commandMap		:IEventCommandMap;
+	public var evtCommandMap		:IEventCommandMap;
+
+	[Inject]
+	public var commandMap		:ISignalCommandMap;
 
 	[Inject]
 	public var eventDispatcher	:IEventDispatcher;
@@ -92,9 +98,12 @@ public class ApConfig implements IConfig {
 		// commands
 		//---------------
 
-		commandMap.map(RobotLegsEvent.STARTUP_COMPLETE, RobotLegsEvent).toCommand(StartupCommand);
+		//commandMap.map(RobotLegsEvent.STARTUP_COMPLETE, RobotLegsEvent).toCommand(StartupCommand);
+		//evtCommandMap.map(RobotLegsEvent.STARTUP_COMPLETE, RobotLegsEvent).toCommand(StartupCommand);
+		commandMap.map(StartupSignal).toCommand(StartupCommand);
+		commandMap.map(NavigateSignal).toCommand(NavigationCommand);
 
-		commandMap.map(NavigationEvent.NAVIGATE_TO, NavigationEvent).toCommand(NavigationCommand);
+		//evtCommandMap.map(NavigationEvent.NAVIGATE_TO, NavigationEvent).toCommand(NavigationCommand);
 		/*commandMap.map(NavigationEvent.NAVIGATE_BACK, NavigationEvent).toCommand(NavigationCommand);
 		commandMap.map(NavigationEvent.SET_SCREEN, NavigationEvent).toCommand(NavigationCommand);*/
 

@@ -12,29 +12,33 @@ import robotlegs.bender.bundles.mvcs.Command;
 
 public final class NavigationCommand extends Command
     {
+/*        [Inject]
+        public var event    :NavigationEvent;*/
+
         [Inject]
-        public var event    :NavigationEvent;
+        public var signal   :NavigateSignal;
 
         [Inject]
         public var service  :NavigationService;
 
+        [Inject]
+        public var screen   :String;
+
         override public function execute():void
         {
             super.execute();
-            switch(event.type)
+/*            switch(screen)
             {
                 case NavigationEvent.NAVIGATE_TO:
-                    //service.setCurrentScreen(event.screenName, event.allowGoBack);
                     break;
 
-                case NavigationEvent.NAVIGATE_BACK:
-                    //service.back();
-                    break;
 
                 case NavigationEvent.SET_SCREEN:
-                    service.setCurrentScreen(event.screenName);
+                    service.setCurrentScreen(screen);
                     break;
-            }
+            }*/
+
+            service.setCurrentScreen(screen);
         }
     }
 }

@@ -29,6 +29,9 @@
             <entry library-id="a03331f7-d74d-45e3-8b54-20cb01b5d7fc">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="1b6e1ee5-0f17-467d-be7f-b80c0591a49b">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="AIRSDK_Compiler_20" />
         </dependencies>
@@ -122,6 +125,16 @@
         <properties id="a03331f7-d74d-45e3-8b54-20cb01b5d7fc" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/as3-signals-v0.9-BETA.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="1b6e1ee5-0f17-467d-be7f-b80c0591a49b" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/robotlegs-extensions-SignalCommandMap.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

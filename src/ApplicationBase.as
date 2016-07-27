@@ -16,6 +16,7 @@ import org.osflash.signals.Signal;
 import robotlegs.bender.bundles.mvcs.MVCSBundle;
 
 import robotlegs.bender.extensions.contextView.ContextView;
+import robotlegs.bender.extensions.signalCommandMap.SignalCommandMapExtension;
 
 import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.impl.Context;
@@ -87,7 +88,7 @@ public class ApplicationBase extends Sprite {
 		context.install(MVCSBundle);
 		context.configure(ApConfig, new ContextView(this));*/
 		context = new Context();
-		context.install(MVCSBundle, StarlingViewMapExtension);
+		context.install(MVCSBundle, StarlingViewMapExtension, SignalCommandMapExtension);
 		context.configure(ApConfig, new ContextView(this), starling);
 	}
 
