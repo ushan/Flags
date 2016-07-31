@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="starling2plus" type="flex">
+    <CLASSES>
+      <root url="file://D:/SVNOpenSource/starling/starling-2.0.1/starling/bin" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://D:/SVNOpenSource/starling/starling-2.0.1/starling/doc/html" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://D:/SVNOpenSource/starling/starling-2.0.1/starling/src" />
+    </SOURCES>
+    <jarDirectory url="file://D:/SVNOpenSource/starling/starling-2.0.1/starling/bin" recursive="false" />
+  </library>
+</component>

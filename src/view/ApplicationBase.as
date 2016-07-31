@@ -10,6 +10,7 @@ import feathers.examples.navigator.Main;
 import flash.display.Sprite;
 
 import flash.events.Event;
+import flash.filesystem.File;
 
 import org.osflash.signals.Signal;
 
@@ -23,6 +24,8 @@ import robotlegs.bender.framework.impl.Context;
 import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
 
 import starling.core.Starling;
+import starling.utils.AssetManager;
+
 
 public class ApplicationBase extends Sprite {
 	//----------------------------------------------------------------------
@@ -31,7 +34,8 @@ public class ApplicationBase extends Sprite {
 	//
 	//----------------------------------------------------------------------
 
-	public const uiCreated:Signal = new Signal();
+	public const engineInited	:Signal = new Signal();
+	public const assetsLoaded	:Signal = new Signal();
 
 	//----------------------------------------------------------------------
 	//
@@ -58,17 +62,15 @@ public class ApplicationBase extends Sprite {
 	//	constructor
 	//
 	//----------------------------------------------------------------------
-	public function ApplicationBase() {
+	public function ApplicationBase()
+	{
 		super();
+
 		init();
 
 	}
 
-	private function init():void {
-		updateSize();
 
-
-	}
 
 	public function showScreen(screenName:String):void
 	{
@@ -87,10 +89,13 @@ public class ApplicationBase extends Sprite {
 		context.configure(ApConfig, new ContextView(this), starling);
 	}
 
-	protected function reportUICreated():void
+	protected function reportEngineCreated():void
 	{
-		uiCreated.dispatch();
+		engineInited.dispatch();
 	}
+
+	protected function initEngine():void { 	}
+	protected function activate():void { 	}
 
 
 	//----------------------------------------------------------------------
@@ -99,16 +104,17 @@ public class ApplicationBase extends Sprite {
 	//
 	//----------------------------------------------------------------------
 
+	private function init():void
+	{
+		addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
+
+	}
 
 	private function finishScreenTransition():void
 	{
 	}
 
 
-	private function updateSize():void
-	{
-
-	}
 
 	//----------------------------------------------------------------------
 	//
@@ -119,12 +125,9 @@ public class ApplicationBase extends Sprite {
 	private function addedToStageHandler(event:Event):void
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
-		init();
+		initEngine();
+		//activate();
 	}
 
-	private function stage_resizeHandler(event:Event):void
-	{
-		updateSize();
-	}
 }
 }

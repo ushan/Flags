@@ -1,5 +1,6 @@
 package view {
 
+import controller.LoadAssetsSignal;
 import controller.NavigateSignal;
 import controller.StartupSignal;
 
@@ -18,6 +19,9 @@ public final class ApplicationMediator extends Mediator {
 
 	[Inject]
 	public var applicationBase	:ApplicationBase;
+/*
+	[Inject]
+	public var signal			:LoadAssetsSignal;*/
 
 	[Inject]
 	public var signal			:StartupSignal;
@@ -39,7 +43,7 @@ public final class ApplicationMediator extends Mediator {
 		super.initialize();
 
 
-		applicationBase.uiCreated.add(startGameSignalHandler);
+		applicationBase.engineInited.add(engineInitedHandler);
 		navSignal.add(navigateToHandler)
 	}
 
@@ -50,7 +54,7 @@ public final class ApplicationMediator extends Mediator {
 	//----------------------------------------------------------------------
 
 
-	private function startGameSignalHandler():void
+	private function engineInitedHandler():void
 	{
 		//eventDispatcher.dispatchEvent(RobotLegsEvent.startupComplete());
 		signal.dispatch();

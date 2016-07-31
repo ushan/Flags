@@ -4,7 +4,7 @@
 package controller {
 import model.EGlobalConstants;
 import model.LoadDataEvent;
-import model.flags.FlagsService;
+import model.flags.CountriesService;
 import model.navigation.NavigationService;
 
 import rl.Command;
@@ -15,7 +15,7 @@ public class LoadFlagsDataCommand extends Command {
 	public var event:LoadDataEvent;*/
 
 	[Inject]
-	public var flagsService			:FlagsService;
+	public var flagsService			:CountriesService;
 
 	[Inject]
 	public var navigationService	:NavigationService;

@@ -11,6 +11,7 @@ package controller
         override public function prepare():void
         {
             atomic = false;
+            add(LoadAssetsCommand);
             add(StartAppCommand);
         }
     }
@@ -21,8 +22,8 @@ import controller.NavigateSignal;
 
 import model.EScreenName;
 
-import model.flags.FlagsModel;
-import model.flags.FlagsService;
+import model.flags.CountriesModel;
+import model.flags.CountriesService;
 import model.navigation.NavigationEvent;
 
 import rl.Command;
@@ -33,10 +34,10 @@ class StartAppCommand extends Command
 {
 
     [Inject]
-    public var flagsModel   :FlagsModel;
+    public var flagsModel   :CountriesModel;
 
     [Inject]
-    public var flagsService :FlagsService;
+    public var flagsService :CountriesService;
 
     [Inject]
     public var signal       :NavigateSignal;

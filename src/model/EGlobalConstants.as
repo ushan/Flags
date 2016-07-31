@@ -3,6 +3,7 @@
  */
 package model {
 public class EGlobalConstants {
-	public static const FLAGS_URL:String = "";
+	public static const FLAGS_URL		:String = "";
+	public static const COUNTRIES_OBJECT_NAME	:String = "countries";
 }
 }

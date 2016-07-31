@@ -1,6 +1,7 @@
 package feathers.examples.navigator
 {
-	import feathers.controls.LayoutGroup;
+import feathers.controls.Button;
+import feathers.controls.LayoutGroup;
 	import feathers.controls.StackScreenNavigator;
 	import feathers.controls.StackScreenNavigatorItem;
 	import feathers.examples.navigator.screens.ScreenA;
@@ -9,12 +10,13 @@ package feathers.examples.navigator
 	import feathers.examples.navigator.screens.ScreenC;
 	import feathers.motion.Fade;
 	import feathers.motion.Slide;
-	import feathers.themes.MetalWorksMobileTheme;
-import feathers.themes.MinimalMobileTheme;
+
+import flash.filesystem.File;
 
 import model.EScreenName;
 
 import starling.events.Event;
+import starling.utils.AssetManager;
 
 import view.screens.CountrySelectorScreen;
 
@@ -52,8 +54,13 @@ public class Main extends LayoutGroup
 		public function Main()
 		{
 			//new MinimalMobileTheme();
-			new MetalWorksMobileTheme();
+			//new MetalWorksMobileTheme();
+			//new MetalWorksMobileTheme();
+			//new FlagsAppThemeWithAssetManager();
+
 			super();
+
+
 		}
 
 

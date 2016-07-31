@@ -4,6 +4,8 @@
 package {
 
 
+import controller.LoadAssetsCommand;
+import controller.LoadAssetsSignal;
 import controller.NavigateSignal;
 import controller.NavigationCommand;
 import controller.StartupCommand;
@@ -17,9 +19,9 @@ import feathers.examples.navigator.MainMediator;
 
 import flash.events.IEventDispatcher;
 
-import model.flags.FlagsModel;
+import model.flags.CountriesModel;
 
-import model.flags.FlagsService;
+import model.flags.CountriesService;
 import model.navigation.NavigationEvent;
 
 import model.navigation.NavigationService;
@@ -44,6 +46,7 @@ import view.screens.CountrySelectorScreen;
 import view.screens.CountrySelectorScreenMediator;
 import view.screens.WelcomeScreen;
 import view.screens.WelcomeScreenMediator;
+import view.themes.AssetsService;
 
 
 public class ApConfig implements IConfig {
@@ -87,6 +90,7 @@ public class ApConfig implements IConfig {
 		// commands
 		//---------------
 		commandMap.map(StartupSignal).toCommand(StartupCommand);
+		//commandMap.map(LoadAssetsSignal).toCommand(LoadAssetsCommand);
 		commandMap.map(NavigateSignal).toCommand(NavigationCommand);
 
 
@@ -120,9 +124,10 @@ public class ApConfig implements IConfig {
 		// models
 		//---------------
 
+		injector.map(AssetsService).asSingleton();
 		injector.map(NavigationService).asSingleton();
-		injector.map(FlagsService).asSingleton();
-		injector.map(FlagsModel).asSingleton();
+		injector.map(CountriesService).asSingleton();
+		injector.map(CountriesModel).asSingleton();
 
 		//---------------
 		// services

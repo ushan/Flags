@@ -5,18 +5,6 @@
       <configuration name="Flags" target-platform="Mobile" pure-as="true" main-class="StackScreenNavigatorExplorer" output-file="Main.swf" output-folder="$MODULE_DIR$/out/production/PureFeathers">
         <dependencies target-player="20.0">
           <entries>
-            <entry library-id="43afc241-f3da-48b2-932f-85933437341a">
-              <dependency linkage="Merged" />
-            </entry>
-            <entry library-id="f818c9fb-95b5-4135-a9c8-b589ca163b02">
-              <dependency linkage="Merged" />
-            </entry>
-            <entry library-id="8c535bc7-0c0f-4d23-9fd9-6887b510a6bc">
-              <dependency linkage="Merged" />
-            </entry>
-            <entry library-id="dd401608-959d-4bb7-ac4f-fcd148c256cb">
-              <dependency linkage="Merged" />
-            </entry>
             <entry library-id="f381bc62-55b9-47c5-8dfe-83e284b22fde">
               <dependency linkage="Merged" />
             </entry>
@@ -32,12 +20,27 @@
             <entry library-id="1b6e1ee5-0f17-467d-be7f-b80c0591a49b">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-name="feathers3plus" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="starling2plus" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="AIRSDK_Compiler_20" />
         </dependencies>
-        <compiler-options />
+        <compiler-options>
+          <map>
+            <entry key="compiler.debug.swf" value="true" />
+          </map>
+        </compiler-options>
         <packaging-air-desktop />
-        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/src/StackScreenNavigatorExplorer-app.xml" package-file-name="Main" />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/src/StackScreenNavigatorExplorer-app.xml" package-file-name="Main">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/iconsAndroid" path-in-package="iconsAndroid" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/assets" path-in-package="assets" />
+          </files-to-package>
+        </packaging-android>
         <packaging-ios package-file-name="Main" />
       </configuration>
     </configurations>
@@ -50,46 +53,6 @@
     </content>
     <orderEntry type="jdk" jdkName="AIRSDK_Compiler_20" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="43afc241-f3da-48b2-932f-85933437341a" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/feathers.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="f818c9fb-95b5-4135-a9c8-b589ca163b02" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/starling.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="8c535bc7-0c0f-4d23-9fd9-6887b510a6bc" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/MetalWorksMobileTheme.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="dd401608-959d-4bb7-ac4f-fcd148c256cb" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/MinimalMobileTheme.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module-library" exported="">
       <library type="flex">
         <properties id="f381bc62-55b9-47c5-8dfe-83e284b22fde" />
@@ -140,5 +103,10 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="source" level="project" />
+    <orderEntry type="library" exported="" name="feathers" level="project" />
+    <orderEntry type="library" exported="" name="feathers3src" level="project" />
+    <orderEntry type="library" exported="" name="feathers3plus" level="project" />
+    <orderEntry type="library" exported="" name="starling2plus" level="project" />
   </component>
 </module>

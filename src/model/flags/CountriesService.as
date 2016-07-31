@@ -4,15 +4,15 @@
 package model.flags {
 import rl.Actor;
 
-public class FlagsService extends Actor {
+public class CountriesService extends Actor {
 	//----------------------------------------------------------------------
 	//
 	//	read only
 	//
 	//----------------------------------------------------------------------
 
-	public function get flags()	:Vector.<FlagVO>    { return _flags; }
-	private var _flags			:Vector.<FlagVO> ;
+	public function get flags()	:Vector.<CountryVO>    { return _flags; }
+	private var _flags			:Vector.<CountryVO> ;
 
 	//----------------------------------------------------------------------
 	//
@@ -28,7 +28,7 @@ public class FlagsService extends Actor {
 	//
 	//----------------------------------------------------------------------
 
-	public function FlagsService() {
+	public function CountriesService() {
 		super();
 	}
 
@@ -42,5 +42,6 @@ public class FlagsService extends Actor {
 	{
 		this.url = url;
 	}
+
 }
 }

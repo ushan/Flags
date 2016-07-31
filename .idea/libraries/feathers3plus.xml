@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="feathers3plus" type="flex">
+    <CLASSES>
+      <root url="file://D:/SVNOpenSource/feathers/feathers-ui-3.0.2/swc" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://D:/SVNOpenSource/feathers/feathers-ui-3.0.2/api-reference" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://D:/SVNOpenSource/feathers/feathers-ui-3.0.2/src" />
+    </SOURCES>
+    <jarDirectory url="file://D:/SVNOpenSource/feathers/feathers-ui-3.0.2/swc" recursive="false" />
+  </library>
+</component>
