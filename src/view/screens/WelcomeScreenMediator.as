@@ -44,7 +44,8 @@ public class WelcomeScreenMediator extends StarlingMediator {
 		view.pickCountryPressed.add(pickCountryPressedHandler);
 		countriesModel.changedSignal.add(countryChangedHandler);
 		var maskTexture:Texture = asset.getTexture("RoundMask0000");
-		view.init(maskTexture);
+		var url:String = countriesModel.getCurrentFullSizeURL();
+		view.init(maskTexture, url);
 	}
 
 	override public function destroy():void
@@ -53,6 +54,8 @@ public class WelcomeScreenMediator extends StarlingMediator {
 		countriesModel.changedSignal.remove(countryChangedHandler);
 		super.destroy();
 	}
+
+
 
 	//----------------------------------------------------------------------
 	//
@@ -67,7 +70,8 @@ public class WelcomeScreenMediator extends StarlingMediator {
 
 	private function countryChangedHandler():void
 	{
-		view.updateFlag("https://raw.githubusercontent.com/hjnilsson/country-flags/master/png1000px/us.png")
+		var url:String = countriesModel.getCurrentFullSizeURL();
+		view.updateFlag(url);
 	}
 }
 }

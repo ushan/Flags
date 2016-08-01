@@ -15,6 +15,7 @@ import feathers.layout.VerticalLayoutData;
 import feathers.skins.ImageSkin;
 
 import flash.display.BitmapData;
+import flash.geom.Rectangle;
 
 import org.osflash.signals.Signal;
 
@@ -70,25 +71,40 @@ public class WelcomeScreen extends ScreenAbstract {
 	public function updateFlag(url:String):void
 	{
 		//flagImage.
+		flagImage.dispose();
 		flagImage.source = url;
+		//flagImage.lo
 	}
 
-	public function init(texture:Texture):void
+	public function init(texture:Texture, url:String = null):void
 	{
-		flagImage = new ImageLoader();
-		flagImage.source = "https://raw.githubusercontent.com/hjnilsson/country-flags/master/png1000px/ua.png";
-		var flagLayoutData:AnchorLayoutData = new AnchorLayoutData();
-		flagLayoutData.top = 20;
-		flagLayoutData.left = 20;
-		flagLayoutData.right = 20;
-		flagLayoutData.horizontalCenter = 0;
-		flagImage.layoutData = flagLayoutData;
-		//Starling.current.stage.stageWidth = event.width;
-		addChild(flagImage);
+		if (url) {
+			if (!flagImage)
+			{
+				flagImage = new ImageLoader();
+				flagImage.source = url;
+				var flagLayoutData:AnchorLayoutData = new AnchorLayoutData();
+				flagLayoutData.top = 20;
+				flagLayoutData.left = 20;
+				flagLayoutData.right = 20;
+				flagLayoutData.horizontalCenter = 0;
+				flagImage.layoutData = flagLayoutData;
+				//Starling.current.stage.stageWidth = event.width;
+				addChild(flagImage);
 
-		maskImage = new ImageSkin(texture);
-		//addChild(maskImage);
-		setMaskPosition();
+				maskImage = new ImageSkin(texture);
+				maskImage.scale9Grid = new flash.geom.Rectangle(64, 64, 180, 180);
+				addChild(maskImage);
+				flagImage.addEventListener(Event.COMPLETE, imageLoader_completeHandler);
+			}
+				else
+			{
+				updateFlag(url);
+			}
+
+			//setMaskPosition();
+
+		}
 
 		var pickCountryBtnLayoutData:AnchorLayoutData = new AnchorLayoutData();
 		pickCountryBtnLayoutData.bottom = Starling.current.stage.stageHeight / 3;
@@ -101,10 +117,24 @@ public class WelcomeScreen extends ScreenAbstract {
 		pickCountryBtn.addEventListener(Event.TRIGGERED, popToB1Button_triggeredHandler);
 		this.addChild(pickCountryBtn);
 
-		flagImage.addEventListener(Event.COMPLETE, imageLoader_completeHandler);
+
 
 
 	}
+
+	override public function dispose():void
+	{
+		super.dispose();
+		pickCountryBtn.styleNameList.remove(CustomAppTheme.CUSTOM_BUTTON);
+
+		if (flagImage)
+		{
+			flagImage.removeEventListener(Event.COMPLETE, imageLoader_completeHandler);
+			flagImage.dispose();
+		}
+	}
+
+
 	//----------------------------------------------------------------------
 	//
 	//	overrides
@@ -120,16 +150,25 @@ public class WelcomeScreen extends ScreenAbstract {
 
 	 }
 
+	//----------------------------------------------------------------------
+	//
+	//	private methods
+	//
+	//----------------------------------------------------------------------
 
+	private function initImageLoader():void
+	{
+
+	}
 	private function setMaskPosition():void
 	{
 		removeChild(maskImage);
 		addChild(maskImage);
-		flagImage.invalidate();
+		flagImage.validate();
 		maskImage.x = flagImage.x - 1;
 		maskImage.y = flagImage.y - 1;
-		maskImage.width = flagImage.width + 1;
-		maskImage.height = flagImage.height + 1;
+		maskImage.width = flagImage.width + 2;
+		maskImage.height = flagImage.height + 2;
 
 	}
 

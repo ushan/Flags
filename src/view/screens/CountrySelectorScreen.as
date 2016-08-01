@@ -129,7 +129,10 @@ public class CountrySelectorScreen extends ScreenAbstract {
 	}
 
 
-
+	override public function dispose():void
+	{
+		super.dispose();
+	}
 
 	//----------------------------------------------------------------------
 	//
