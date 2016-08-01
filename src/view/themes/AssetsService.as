@@ -7,6 +7,7 @@ import flash.display.BitmapData;
 import flash.utils.Dictionary;
 
 import model.EGlobalConstants;
+import model.flags.CountriesModel;
 import model.flags.CountryVO;
 
 import starling.textures.Texture;
@@ -26,6 +27,10 @@ public class AssetsService {
 
 	[Embed(source="../../assets/misc/leftCorner.png")]
 	protected static const LEFT_CORNER_CLASS:Class;
+
+
+	[Inject]
+	public var countriesModel   :CountriesModel;
 	//----------------------------------------------------------------------
 	//
 	//	signals
@@ -37,7 +42,7 @@ public class AssetsService {
 	//	public fields
 	//
 	//----------------------------------------------------------------------
-	public var countries		:Vector.<CountryVO>;
+	//public var countries		:Vector.<CountryVO>;
 
 	//----------------------------------------------------------------------
 	//
@@ -88,14 +93,14 @@ public class AssetsService {
 		trace("compete");
 		assetLoaded.dispatch();
 		defaultTheme.removeEventListener(flash.events.Event.COMPLETE, theme_completeHandler);
-		parseCounties(assets.getObject(EGlobalConstants.COUNTRIES_OBJECT_NAME));
+		saveCounties(assets.getObject(EGlobalConstants.COUNTRIES_OBJECT_NAME));
 
 
 	}
 
-	private function parseCounties(data:Object)
+	private function saveCounties(data:Object)
 	{
-		countries = new <CountryVO>[];
+		var countries:Vector.<CountryVO> = new <CountryVO>[];
 
 		//for each(var c:Object in data)
 		for	(var c:String in data)
@@ -108,7 +113,7 @@ public class AssetsService {
 
 		}
 
-
+		countriesModel.countries = countries;
 	}
 
 	private function assetManager_onProgress(progress:Number):void

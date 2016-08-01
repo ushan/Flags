@@ -8,6 +8,8 @@ import controller.LoadAssetsCommand;
 import controller.LoadAssetsSignal;
 import controller.NavigateSignal;
 import controller.NavigationCommand;
+import controller.SetCurrentCountryCommand;
+import controller.SetCurrentCountrySignal;
 import controller.StartupCommand;
 import controller.StartupSignal;
 
@@ -92,6 +94,7 @@ public class ApConfig implements IConfig {
 		commandMap.map(StartupSignal).toCommand(StartupCommand);
 		//commandMap.map(LoadAssetsSignal).toCommand(LoadAssetsCommand);
 		commandMap.map(NavigateSignal).toCommand(NavigationCommand);
+		commandMap.map(SetCurrentCountrySignal).toCommand(SetCurrentCountryCommand);
 
 
 

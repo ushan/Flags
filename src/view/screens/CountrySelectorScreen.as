@@ -159,8 +159,9 @@ public class CountrySelectorScreen extends ScreenAbstract {
 
 	private function list_changeHandler(event:Event):void
 	{
-		var selectedIndices:Vector.<int> = _list.selectedIndices;
-		trace("List change:", selectedIndices.length > 0 ? selectedIndices : _list.selectedIndex);
+		countrySelected.dispatch(_list.selectedIndex);
+		//var selectedCountry:CountryVO = _list.selectedIndex
+		//trace("List change:", selectedIndices.length > 0 ? selectedIndices : _list.selectedIndex);
 	}
 }
 }

@@ -6,8 +6,10 @@ package view.screens {
 import controller.NavigateSignal;
 
 import model.EScreenName;
+import model.flags.CountriesModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
+import robotlegs.bender.framework.impl.Context;
 import robotlegs.extensions.starlingViewMap.impl.StarlingMediator;
 
 import starling.textures.Texture;
@@ -18,16 +20,17 @@ public class WelcomeScreenMediator extends StarlingMediator {
 
 
 	[Inject]
-	public var view	:WelcomeScreen;
-
-
+	public var view			:WelcomeScreen;
 
 	[Inject]
 	public var signal       :NavigateSignal;
 
-	public function WelcomeScreenMediator() {
-		super();
-	}
+	[Inject]
+	public var countriesModel:CountriesModel;
+
+	[Inject]
+	public var asset			:AssetsService;
+
 
 	//----------------------------------------------------------------------
 	//
@@ -39,16 +42,32 @@ public class WelcomeScreenMediator extends StarlingMediator {
 	{
 		super.initialize();
 		view.pickCountryPressed.add(pickCountryPressedHandler);
+		countriesModel.changedSignal.add(countryChangedHandler);
+		var maskTexture:Texture = asset.getTexture("RoundMask0000");
+		view.init(maskTexture);
 	}
 
 	override public function destroy():void
 	{
+		view.pickCountryPressed.remove(pickCountryPressedHandler);
+		countriesModel.changedSignal.remove(countryChangedHandler);
 		super.destroy();
 	}
+
+	//----------------------------------------------------------------------
+	//
+	//	handlers
+	//
+	//----------------------------------------------------------------------
 
 	private function pickCountryPressedHandler():void
 	{
 		signal.dispatch(EScreenName.COUNTRY_SELECTOR_SCREEN);
+	}
+
+	private function countryChangedHandler():void
+	{
+		view.updateFlag("https://raw.githubusercontent.com/hjnilsson/country-flags/master/png1000px/us.png")
 	}
 }
 }

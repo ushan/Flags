@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <application xmlns="http://ns.adobe.com/air/application/20.0">
 	<id>com.feathersui.examples.StackScreenNavigatorExplorer</id>
-	<filename>StackScreenNavigator</filename>
-	<name>StackScreenNavigator</name>
-	<versionNumber>3.0.0</versionNumber>
-	<description>StackScreenNavigator Explorer example application built with Feathers UI controls for Starling</description>
-	<copyright>2016 Bowler Hat LLC</copyright>
+	<filename>CountrySelector</filename>
+	<name>CountrySelector</name>
+	<versionNumber>0.0.1</versionNumber>
+	<description>CountrySelector Example</description>
+	<copyright>2016 Alexandr Mostovoy</copyright>
 
 	<initialWindow>
 		<content>StackScreenNavigatorExplorer.swf</content>

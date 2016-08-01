@@ -47,6 +47,12 @@ public final class ApplicationMediator extends Mediator {
 		navSignal.add(navigateToHandler)
 	}
 
+	override public function destroy():void
+	{
+		applicationBase.engineInited.remove(engineInitedHandler);
+		navSignal.remove(navigateToHandler)
+		super.destroy();
+	}
 	//----------------------------------------------------------------------
 	//
 	//	context handlers
