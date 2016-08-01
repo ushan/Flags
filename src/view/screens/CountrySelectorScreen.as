@@ -44,7 +44,7 @@ public class CountrySelectorScreen extends ScreenAbstract {
 	public function CountrySelectorScreen()
 	{
 		super();
-		//title = "Select Your Country";
+		title = "Select Your Country";
 	}
 
 	public function filterCounties(countries:Vector.<CountryVO>):void
@@ -83,7 +83,7 @@ public class CountrySelectorScreen extends ScreenAbstract {
 		};
 		_list.addEventListener(Event.CHANGE, list_changeHandler);
 		_list.layoutData = new AnchorLayoutData(30, 0, 0, 0);
-		_list.paddingLeft = 30;
+		_list.paddingLeft = 100;
 		addChild(_list);
 
 		_input = new TextInput();

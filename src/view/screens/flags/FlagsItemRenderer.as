@@ -66,24 +66,14 @@ public class FlagsItemRenderer extends DefaultListItemRenderer {
 		if (!iconLoader) return
 		iconLoader.width = 50;
 		iconLoader.scaleY = iconLoader.scaleX;
+		iconLoader.x = -100;
 
 
-/*		if (flagTexture == countyVO.texture) return
-		if (!flagImage)
-		{
-			flagImage = new Image(_data.texture);
-			flagImage.height = 30;
-			flagImage.scaleX = flagImage.scaleY;
-			flagImage.x = - 30;
-			//flagImage.layoutData =  new AnchorLayoutData(0, 0, 0, 0);
-			addChild(flagImage);
-		}
-		else
-		{
-			flagImage.texture = countyVO.texture;
-		}
-		flagTexture = countyVO.texture;*/
 
+	}
+
+	override protected function draw():void
+	{
 
 
 	}

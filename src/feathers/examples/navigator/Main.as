@@ -4,10 +4,7 @@ import feathers.controls.Button;
 import feathers.controls.LayoutGroup;
 	import feathers.controls.StackScreenNavigator;
 	import feathers.controls.StackScreenNavigatorItem;
-	import feathers.examples.navigator.screens.ScreenA;
-	import feathers.examples.navigator.screens.ScreenB1;
-	import feathers.examples.navigator.screens.ScreenB2;
-	import feathers.examples.navigator.screens.ScreenC;
+	import view.screens.WaitScreen;
 	import feathers.motion.Fade;
 	import feathers.motion.Slide;
 
@@ -74,32 +71,17 @@ public class Main extends LayoutGroup
 
 
 
-			var itemA:StackScreenNavigatorItem = new StackScreenNavigatorItem(ScreenA);
-			itemA.setScreenIDForPushEvent(Event.COMPLETE, SCREEN_B1);
-			_navigator.addScreen(SCREEN_A, itemA);
+			var waitScreen:StackScreenNavigatorItem = new StackScreenNavigatorItem(WaitScreen);
+			_navigator.addScreen(EScreenName.WAIT_SCREEN, waitScreen);
 
-			var itemB1:StackScreenNavigatorItem = new StackScreenNavigatorItem(ScreenB1);
-			itemB1.setScreenIDForPushEvent(Event.COMPLETE, SCREEN_C);
-			itemB1.setScreenIDForReplaceEvent(Event.CHANGE, SCREEN_B2);
-			itemB1.addPopEvent(Event.CANCEL);
-			_navigator.addScreen(SCREEN_B1, itemB1);
 
-			var itemB2:StackScreenNavigatorItem = new StackScreenNavigatorItem(ScreenB2);
-			itemB2.pushTransition = Fade.createFadeInTransition();
-			itemB2.addPopEvent(Event.CANCEL);
-			_navigator.addScreen(SCREEN_B2, itemB2);
+			var welcomeScreen:StackScreenNavigatorItem = new StackScreenNavigatorItem(WelcomeScreen);
+			_navigator.addScreen(EScreenName.WELCOME_SCREEN, welcomeScreen);
 
-			var itemC:StackScreenNavigatorItem = new StackScreenNavigatorItem(WelcomeScreen);
-			itemC.addPopToRootEvent(Event.CLOSE);
-			itemC.addPopEvent(Event.CANCEL);
-			_navigator.addScreen(EScreenName.WELCOME_SCREEN, itemC);
+			var countrySelectorScreen:StackScreenNavigatorItem = new StackScreenNavigatorItem(CountrySelectorScreen);
+			_navigator.addScreen(EScreenName.COUNTRY_SELECTOR_SCREEN, countrySelectorScreen);
 
-			var itemD:StackScreenNavigatorItem = new StackScreenNavigatorItem(CountrySelectorScreen);
-			itemD.addPopToRootEvent(Event.CLOSE);
-			itemD.addPopEvent(Event.CANCEL);
-			_navigator.addScreen(EScreenName.COUNTRY_SELECTOR_SCREEN, itemD);
-
-			_navigator.rootScreenID = SCREEN_A;
+			_navigator.rootScreenID = EScreenName.WAIT_SCREEN;
 			this.addChild(navigator);
 		}
 	}

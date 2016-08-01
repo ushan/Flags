@@ -55,6 +55,11 @@ public class CountrySelectorScreenMediator extends StarlingMediator{
 		super.destroy();
 	}
 
+	//----------------------------------------------------------------------
+	//
+	//	handlers
+	//
+	//----------------------------------------------------------------------
 
 	private function filterChangedHandler():void
 	{

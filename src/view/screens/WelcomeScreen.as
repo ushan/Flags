@@ -64,7 +64,7 @@ public class WelcomeScreen extends ScreenAbstract {
 	public function WelcomeScreen()
 	{
 		super();
-		//this.title = "Welcome";
+		this.title = "Welcome";
 	}
 	//----------------------------------------------------------------------
 	//

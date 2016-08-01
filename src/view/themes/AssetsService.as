@@ -87,6 +87,11 @@ public class AssetsService {
 		return assets.getTexture(name);
 	}
 
+	//----------------------------------------------------------------------
+	//
+	//	private methods
+	//
+	//----------------------------------------------------------------------
 
 	private function theme_completeHandler(event:starling.events.Event):void
 	{
