@@ -17,6 +17,8 @@ import feathers.skins.ImageSkin;
 import flash.display.BitmapData;
 import flash.geom.Rectangle;
 
+import mx.events.ResizeEvent;
+
 import org.osflash.signals.Signal;
 
 import starling.core.Starling;
@@ -71,9 +73,9 @@ public class WelcomeScreen extends ScreenAbstract {
 	public function updateFlag(url:String):void
 	{
 		//flagImage.
-		flagImage.dispose();
+		if (flagImage) flagImage.dispose();
 		flagImage.source = url;
-		//flagImage.lo
+		maskImage.visible = false;
 	}
 
 	public function init(texture:Texture, url:String = null):void
@@ -82,20 +84,19 @@ public class WelcomeScreen extends ScreenAbstract {
 			if (!flagImage)
 			{
 				flagImage = new ImageLoader();
-				flagImage.source = url;
-				var flagLayoutData:AnchorLayoutData = new AnchorLayoutData();
-				flagLayoutData.top = 20;
-				flagLayoutData.left = 20;
-				flagLayoutData.right = 20;
-				flagLayoutData.horizontalCenter = 0;
-				flagImage.layoutData = flagLayoutData;
+
+
+
 				//Starling.current.stage.stageWidth = event.width;
 				addChild(flagImage);
-
 				maskImage = new ImageSkin(texture);
+
 				maskImage.scale9Grid = new flash.geom.Rectangle(64, 64, 180, 180);
 				addChild(maskImage);
+				flagImage.source = url;
+				maskImage.visible = false;
 				flagImage.addEventListener(Event.COMPLETE, imageLoader_completeHandler);
+
 			}
 				else
 			{
@@ -106,33 +107,17 @@ public class WelcomeScreen extends ScreenAbstract {
 
 		}
 
-		var pickCountryBtnLayoutData:AnchorLayoutData = new AnchorLayoutData();
-		pickCountryBtnLayoutData.bottom = Starling.current.stage.stageHeight / 3;
-		pickCountryBtnLayoutData.horizontalCenter = 0;
+
 
 		pickCountryBtn = new Button();
 		pickCountryBtn.label = "Pick your Country";
 		pickCountryBtn.styleNameList.add(CustomAppTheme.CUSTOM_BUTTON);
-		pickCountryBtn.layoutData = pickCountryBtnLayoutData;
 		pickCountryBtn.addEventListener(Event.TRIGGERED, popToB1Button_triggeredHandler);
 		this.addChild(pickCountryBtn);
-
-
-
-
+		resize();
 	}
 
-	override public function dispose():void
-	{
-		super.dispose();
-		pickCountryBtn.styleNameList.remove(CustomAppTheme.CUSTOM_BUTTON);
 
-		if (flagImage)
-		{
-			flagImage.removeEventListener(Event.COMPLETE, imageLoader_completeHandler);
-			flagImage.dispose();
-		}
-	}
 
 
 	//----------------------------------------------------------------------
@@ -147,28 +132,102 @@ public class WelcomeScreen extends ScreenAbstract {
 
 		 this.layout = new AnchorLayout();
 
+	 }
+	override protected function	refreshFocusIndicator():void
+	 {
+		 super.refreshFocusIndicator();
+		 resize();
 
 	 }
+
+	override public function dispose():void
+	{
+		super.dispose();
+		pickCountryBtn.styleNameList.remove(CustomAppTheme.CUSTOM_BUTTON);
+
+		if (flagImage)
+		{
+			flagImage.removeEventListener(Event.COMPLETE, imageLoader_completeHandler);
+			flagImage.dispose();
+		}
+	}
+
+
 
 	//----------------------------------------------------------------------
 	//
 	//	private methods
 	//
 	//----------------------------------------------------------------------
-
-	private function initImageLoader():void
+	private function resize():void
 	{
+		var w:Number = Starling.current.stage.stageWidth;
+		var h:Number = Starling.current.stage.stageHeight;
+		var isHorizontal:Boolean = w > h;
+		if (isHorizontal)
+		{
+			resizeImageForLandscape();
+			resizeButtonForLandscape();
+		}
+		else
+		{
+			resizeImageForPortrait();
+			resizeButtonForPortrait();
+		}
+		setMaskPosition();
+		trace("resize");
+	}
+
+	private function resizeImageForLandscape():void
+	{
+		if (!flagImage) return
+		var flagLayoutData:AnchorLayoutData = new AnchorLayoutData();
+		flagLayoutData.top = 10;
+		flagLayoutData.bottom = Starling.current.stage.stageHeight / 3;
+		flagLayoutData.horizontalCenter = 0;
+		flagImage.layoutData = flagLayoutData;
+	}
+	private function resizeImageForPortrait():void
+	{
+		if (!flagImage) return
+		var flagLayoutData:AnchorLayoutData = new AnchorLayoutData();
+		flagLayoutData.top = 20;
+		flagLayoutData.left = 20;
+		flagLayoutData.right = 20;
+		flagLayoutData.horizontalCenter = 0;
+		flagImage.layoutData = flagLayoutData;
+	}
+
+	private function resizeButtonForLandscape():void
+	{
+		var pickCountryBtnLayoutData:AnchorLayoutData = new AnchorLayoutData();
+		pickCountryBtnLayoutData.bottom = Starling.current.stage.stageHeight / 7;
+		pickCountryBtnLayoutData.horizontalCenter = 0;
+		pickCountryBtn.layoutData = pickCountryBtnLayoutData;
 
 	}
+	private function resizeButtonForPortrait():void
+	{
+		var pickCountryBtnLayoutData:AnchorLayoutData = new AnchorLayoutData();
+		pickCountryBtnLayoutData.bottom = Starling.current.stage.stageHeight / 3;
+		pickCountryBtnLayoutData.horizontalCenter = 0;
+		pickCountryBtn.layoutData = pickCountryBtnLayoutData;
+
+	}
+
 	private function setMaskPosition():void
 	{
-		removeChild(maskImage);
-		addChild(maskImage);
+		if (!maskImage) return
+		//removeChild(maskImage);
+		//addChild(maskImage);
 		flagImage.validate();
 		maskImage.x = flagImage.x - 1;
 		maskImage.y = flagImage.y - 1;
+		var w:Number = flagImage.height
 		maskImage.width = flagImage.width + 2;
 		maskImage.height = flagImage.height + 2;
+		maskImage.visible = true;
+		trace(flagImage)
 
 	}
 
@@ -187,6 +246,7 @@ public class WelcomeScreen extends ScreenAbstract {
 	 {
 		 setMaskPosition();
 	 }
+
 
 }
 }

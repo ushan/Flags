@@ -53,9 +53,6 @@ public class Main extends LayoutGroup
 		//----------------------------------------------------------------------
 		public function Main()
 		{
-			//new MinimalMobileTheme();
-			//new MetalWorksMobileTheme();
-			//new MetalWorksMobileTheme();
 			//new FlagsAppThemeWithAssetManager();
 
 			super();
@@ -74,6 +71,7 @@ public class Main extends LayoutGroup
 			_navigator = new StackScreenNavigator();
 			_navigator.pushTransition = Slide.createSlideLeftTransition();
 			_navigator.popTransition = Slide.createSlideRightTransition();
+
 
 
 			var itemA:StackScreenNavigatorItem = new StackScreenNavigatorItem(ScreenA);

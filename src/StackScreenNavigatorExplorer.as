@@ -148,8 +148,8 @@ public class StackScreenNavigatorExplorer extends ApplicationBase {
 	private function activateStarling():void
 	{
 		Starling.multitouchEnabled = true;
-		//starling = new Starling(Main, stage, null, null, Context3DRenderMode.AUTO, Context3DProfile.BASELINE);
-		starling = new Starling(Main, stage);
+		starling = new Starling(Main, stage, null, null, Context3DRenderMode.AUTO, Context3DProfile.BASELINE_EXTENDED);
+		//starling = new Starling(Main, stage);
 		starling.supportHighResolutions = true;
 		starling.skipUnchangedFrames = true;
 		starling.start();
@@ -183,19 +183,6 @@ public class StackScreenNavigatorExplorer extends ApplicationBase {
 
 	}
 
-	/*
-	 private function theme_completeHandler(event:starling.events.Event):void
-	 {
-	 trace("compete");
-	 }
-
-	 private function assetManager_onProgress(progress:Number):void
-	 {
-	 if (progress < 1)
-	 return;
-	 //initialize();
-	 initContext();
-	 }*/
 
 	//----------------------------------------------------------------------
 	//
