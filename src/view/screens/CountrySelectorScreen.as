@@ -44,7 +44,7 @@ public class CountrySelectorScreen extends ScreenAbstract {
 	public function CountrySelectorScreen()
 	{
 		super();
-		title = "Select Your Country";
+		//title = "Select Your Country";
 	}
 
 	public function filterCounties(countries:Vector.<CountryVO>):void

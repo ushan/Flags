@@ -3,6 +3,7 @@
  */
 package view.screens {
 import feathers.controls.Button;
+import feathers.controls.Header;
 import feathers.controls.ImageLoader;
 import feathers.controls.PanelScreen;
 import feathers.controls.Screen;
@@ -63,7 +64,7 @@ public class WelcomeScreen extends ScreenAbstract {
 	public function WelcomeScreen()
 	{
 		super();
-		this.title = "Welcome";
+		//this.title = "Welcome";
 	}
 	//----------------------------------------------------------------------
 	//

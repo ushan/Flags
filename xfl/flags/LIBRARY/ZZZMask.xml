@@ -1,0 +1,76 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="ZZZMask" itemID="579e311d-00000c9b" scaleGridLeft="44" scaleGridRight="54.25" scaleGridTop="47" scaleGridBottom="54" lastModified="1469986067">
+  <timeline>
+    <DOMTimeline name="ZZZMask">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText width="545.95" height="27.25" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-168.95" ty="-162.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>//corner radius = iconCRadius * (1 / scale)</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="22" bitmapSize="440" face="MyriadPro-Bold" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FF800A" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!480 0|1520 0!1520 0[1719 0 1859 140!1859 140[2000 281 2000 480!2000 480|2000 1520!2000 1520[2000 1719 1859 1859!1859 1859[1719 2000 1520 2000!1520 2000|480 2000!480 2000[281 2000 140 1859!140 1859[0 1719 0 1520!0 1520|0 480!0 480[0 281
+ 140 140!140 140[281 0 480 0"/>
+                    <Edge cubics="!1859 140(;1953,234 2000,347 2000,480q1859 140Q2000 281q2000 480);"/>
+                    <Edge cubics="!2000 1520(;2000,1653 1953,1766 1859,1859q2000 1520Q2000 1719q1859 1859);"/>
+                    <Edge cubics="!2000 480(;2000,480 2000,1520 2000,1520q2000 480 2000 1520);"/>
+                    <Edge cubics="!0 480(;0,347 47,234 140,140q0 480Q0 281q140 140);"/>
+                    <Edge cubics="!140 140(;234,47 347,0 480,0q140 140Q281 0q480 0);"/>
+                    <Edge cubics="!140 1859(;47,1766 0,1653 0,1520q140 1859Q0 1719q0 1520);"/>
+                    <Edge cubics="!0 1520(;0,1520 0,480 0,480q0 1520 0 480);"/>
+                    <Edge cubics="!480 0(;480,0 1520,0 1520,0q480 0 1520 0);"/>
+                    <Edge cubics="!1520 2000(;1520,2000 480,2000 480,2000q1520 2000 480 2000);"/>
+                    <Edge cubics="!1859 1859(;1766,1953 1653,2000 1520,2000q1859 1859Q1719 2000q1520 2000);"/>
+                    <Edge cubics="!480 2000(;347,2000 234,1953 140,1859q480 2000Q281 2000q140 1859);"/>
+                    <Edge cubics="!1520 0(;1653,0 1766,47 1859,140q1520 0Q1719 0q1859 140);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4F80FF" visible="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="100" objectHeight="100" x="41.6" y="25.6" selected="true" lockFlag="true" topLeftRadius="24" topRightRadius="24" bottomLeftRadius="24" bottomRightRadius="24">
+                  <matrix>
+                    <Matrix tx="-41.6" ty="-25.6"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#999999"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,38 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="RoundMask" itemID="579e9492-00001068" scaleGridLeft="75" scaleGridRight="225" scaleGridTop="75" scaleGridBottom="225" lastModified="1470040429">
+  <timeline>
+    <DOMTimeline name="RoundMask">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" caps="none">
+                        <fill>
+                          <SolidColor color="#CCCCCC"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!620 60|5380 60!5380 60[5612 60 5776 224!5776 224[5940 388 5940 620!5940 620|5940 5380!5940 5380[5940 5612 5776 5776!5776 5776[5612 5940 5380 5940!5380 5940|620 5940!620 5940[388 5940 224 5776!224 5776[60 5612 60 5380!60 5380|60 620!60
+ 620[60 388 224 224!224 224[388 60 620 60"/>
+                    <Edge fillStyle1="1" edges="
+!0 0|6000 0!6000 0|6000 6000!6000 6000|0 6000!0 6000|0 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

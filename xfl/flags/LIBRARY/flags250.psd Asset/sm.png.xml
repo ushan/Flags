@@ -1,0 +1,47 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="flags250.psd Asset/sm.png" itemID="579a170c-000002c2" lastModified="1470010594">
+  <timeline>
+    <DOMTimeline name="sm.png">
+      <layers>
+        <DOMLayer name="border" color="#009999" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="250" objectHeight="188" x="0" y="0" selected="true" lockFlag="true" topLeftRadius="24" topRightRadius="24" bottomLeftRadius="24" bottomRightRadius="24">
+                  <stroke>
+                    <SolidStroke scaleMode="normal" caps="none" weight="6">
+                      <fill>
+                        <SolidColor color="#CCCCCC"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="RoundedMask" color="#FF4FFF" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="250" objectHeight="188" x="0" y="0" lockFlag="true" topLeftRadius="24" topRightRadius="24" bottomLeftRadius="24" bottomRightRadius="24">
+                  <fill>
+                    <SolidColor color="#990000"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4F80FF" parentLayerIndex="1">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="flags250.psd Asset/ZZZAssets/sm.png"/>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
