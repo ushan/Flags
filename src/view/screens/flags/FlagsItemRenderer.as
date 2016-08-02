@@ -31,34 +31,12 @@ public class FlagsItemRenderer extends DefaultListItemRenderer {
 	{
 		super.initialize();
 		iconSourceField = "texture";
-		paddingLeft = 40;
-		//iconFunction = flagIcon;
-
-
 	}
 
-/*	private function flagIcon(item:Object):DisplayObject
-	{
-		trace(item);
-		if (item == countyVO) return;
-		return new DisplayObject();
-	}*/
-
-/*	renderer.iconFunction = function( item:Object ):DisplayObject
-		* {
-	   if(item in cachedIcons)
-	    {
-	        return cachedIcons[item];
-	    }
-	    var icon:Image = new Image( textureAtlas.getTexture( item.textureName ) );
-	    cachedIcons[item] = icon;
-	    return icon;
-	}*/
 
 	override protected function commitData():void
 	{
 		super.commitData();
-		//trace(_data.text);
 		var countyVO:CountryVO = data as CountryVO;
 		//defaultSkin.x = 30;
 		//iconFunction
@@ -66,17 +44,16 @@ public class FlagsItemRenderer extends DefaultListItemRenderer {
 		if (!iconLoader) return
 		iconLoader.width = 50;
 		iconLoader.scaleY = iconLoader.scaleX;
-		iconLoader.x = -100;
-
-
-
 	}
 
-	override protected function draw():void
+	override protected function refreshFocusIndicator():void
 	{
-
+		super.refreshFocusIndicator();
+		height += (height % 2);
 
 	}
+
+
 
 }
 }

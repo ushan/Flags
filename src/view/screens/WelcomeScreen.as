@@ -227,7 +227,7 @@ public class WelcomeScreen extends ScreenAbstract {
 		var w:Number = flagImage.height
 		maskImage.width = flagImage.width + 2;
 		maskImage.height = flagImage.height + 2;
-		maskImage.visible = true;
+		maskImage.visible = false;
 		trace(flagImage)
 
 	}

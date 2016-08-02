@@ -62,18 +62,12 @@ public class CountrySelectorScreen extends ScreenAbstract {
 		_list.isSelectable = true;
 		_list.allowMultipleSelection = false;
 		_list.hasElasticEdges = true;
-		//optimization to reduce draw calls.
-		//only do this if the header or other content covers the edges of
-		//the list. otherwise, the list items may be displayed outside of
-		//the list's bounds.
 		_list.clipContent = false;
 		_list.autoHideBackground = true;
 		_list.itemRendererFactory = function():IListItemRenderer
 		{
 			var renderer:FlagsItemRenderer = new FlagsItemRenderer();
 
-			//enable the quick hit area to optimize hit tests when an item
-			//is only selectable and doesn't have interactive children.
 			renderer.isQuickHitAreaEnabled = true;
 
 			renderer.labelField = "text";
@@ -83,18 +77,15 @@ public class CountrySelectorScreen extends ScreenAbstract {
 		};
 		_list.addEventListener(Event.CHANGE, list_changeHandler);
 		_list.layoutData = new AnchorLayoutData(30, 0, 0, 0);
-		_list.paddingLeft = 100;
 		addChild(_list);
 
 		_input = new TextInput();
-		_input.prompt = "Normal Text Input";
+		_input.prompt = "Type Your Country";
 		_input.layoutData =  new AnchorLayoutData(0, 0, NaN, 0);
 		addChild(_input);
 
 		_input.addEventListener(Event.CHANGE, input_enterHandler);
 
-/*		var im:Image = new Image(texture );
-		addChild(im);*/
 
 	}
 
@@ -102,23 +93,8 @@ public class CountrySelectorScreen extends ScreenAbstract {
 	{
 		super.initialize();
 
-/*		var layout:VerticalLayout = new VerticalLayout();
-		layout.horizontalAlign = HorizontalAlign.CENTER;
-		layout.verticalAlign = VerticalAlign.TOP;
-		layout.gap = 10;
-		this.layout = layout;*/
-
 		this.layout = new AnchorLayout();
 
-
-
-
-
-
-		//headerFactory = null;
-
-		//this screen doesn't use a back button on tablets because the main
-		//app's uses a split layout
 		if(!DeviceCapabilities.isTablet(Starling.current.nativeStage))
 		{
 			backButtonHandler = onBackButton;
@@ -163,8 +139,6 @@ public class CountrySelectorScreen extends ScreenAbstract {
 	private function list_changeHandler(event:Event):void
 	{
 		countrySelected.dispatch(_list.selectedIndex);
-		//var selectedCountry:CountryVO = _list.selectedIndex
-		//trace("List change:", selectedIndices.length > 0 ? selectedIndices : _list.selectedIndex);
 	}
 }
 }

@@ -119,6 +119,7 @@ public class AssetsService {
 		}
 
 		countriesModel.countries = countries;
+
 	}
 
 	private function assetManager_onProgress(progress:Number):void

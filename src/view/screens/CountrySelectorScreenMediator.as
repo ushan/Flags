@@ -41,9 +41,6 @@ public class CountrySelectorScreenMediator extends StarlingMediator{
 		view.filterChanged.add(filterChangedHandler);
 		view.countrySelected.add(countrySelectedHandler);
 
-		//var texture:Texture = asset.getFlagTexture("ua");
-		//var texture:Texture = asset.getTexture("ai.png0002");
-		//var countriesList:ListCollection = new ListCollection();
 		currentCountiesList = countriesModel.countries;
 		view.initCountriesList(currentCountiesList);
 	}
