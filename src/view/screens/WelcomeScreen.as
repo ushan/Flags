@@ -5,8 +5,10 @@ package view.screens {
 import feathers.controls.Button;
 import feathers.controls.Header;
 import feathers.controls.ImageLoader;
+import feathers.controls.Label;
 import feathers.controls.PanelScreen;
 import feathers.controls.Screen;
+import feathers.controls.text.TextFieldTextRenderer;
 import feathers.layout.AnchorLayout;
 import feathers.layout.AnchorLayoutData;
 import feathers.layout.HorizontalAlign;
@@ -77,6 +79,10 @@ public class WelcomeScreen extends ScreenAbstract {
 		if (flagImage) flagImage.dispose();
 		flagImage.source = url;
 		maskImage.visible = false;
+
+		var label:Label
+
+		TextFieldTextRenderer
 	}
 
 	public function init(texture:Texture, url:String = null):void

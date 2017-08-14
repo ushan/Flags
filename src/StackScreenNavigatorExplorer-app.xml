@@ -9,7 +9,7 @@
 
 	<initialWindow>
 		<content>StackScreenNavigatorExplorer.swf</content>
-		<autoOrients>true</autoOrients>
+		<autoOrients>false</autoOrients>
 		<fullScreen>false</fullScreen>
 		<visible>true</visible>
 		<renderMode>direct</renderMode>
